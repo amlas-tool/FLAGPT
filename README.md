@@ -2,7 +2,7 @@
 System instructions for FLAGPT and associated files for SAFECOMP 2024 paper. FLAGPT can be found OpenAI explore GPTs section of the ChatGPT interface.
 
 The system descriptions files we used for failure logic analysis can all be found in the code section. We have also uploaded some examples of the LaTeX files, including the \input files
-used for the TikZ node declarations and logic gate definitions.
+used for the TikZ node declarations and logic gate definitions. You should use the example.tex as the environment, and uncomment / add the inputs for the file you want to visualise.
 
 The system instructions are reproduced below.
 ````latex
