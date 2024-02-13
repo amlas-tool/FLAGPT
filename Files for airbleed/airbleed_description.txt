@@ -1,0 +1,5 @@
+On civil airliners, fresh air in the passenger cabin is normally maintained by air cycle machines.
+
+A particular twin-engined jet airliner has two large air cycle machines, A and B. Both machines are driven by bleed air (that is, high-pressure air taken from after the compressor stage of the jet engine ) from both engines. Machine A is normally used to maintain the cabin air. If machine A fails, machine B is used instead.
+
+If machine B fails as well, there are two small air-conditioning packs C and D which provide a final option for maintaining the cabin air. Each of these packs is driven mechanically from one of the engines. These packs have lower capacity than the air cycle machines, so BOTH need to be working to maintain the cabin air.
