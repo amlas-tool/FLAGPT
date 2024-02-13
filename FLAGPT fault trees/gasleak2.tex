@@ -1,0 +1,48 @@
+\node (g1) [event] {Inadequate response to a gas leak (E0)}
+    child{node (e1) {Failure to isolate the gas leak (E1)} 
+        child {node (e11) {Failure to close isolation valve V1 (E11)}
+            child {node (e111) {Control system fails to send close signal to V1 (E111)}}
+            child {node (e112) {V1 fails to close despite receiving signal (E112)}}
+        }
+        child {node (e12) {Failure to close isolation valve V2 (E12)}
+            child {node (e121) {Control system fails to send close signal to V2 (E121)}}
+            child {node (e122) {V2 fails to close despite receiving signal (E122)}}
+        }
+    }
+    child{node (e2) {Failure to de-pressurise by flaring gas (E2)}
+        child {node (e21) {Failure to open blowdown valve V3 (E21)}
+            child {node (e211) {Control system fails to send open signal to V3 (E211)}}
+            child {node (e212) {V3 fails to open despite receiving signal (E212)}}
+        }
+    }
+    child {node (e3) {Failure in gas leak detection and system control (E3)}
+        child {node (e31) {Failure in gas detection (E31)}
+            child {node (e311) {Sonic detector fails to detect gas (E311)}}
+            child {node (e312) {Concentration detector fails to detect gas (E312)}}
+        }
+        child {node (e32) {Failure in operator intervention (E32)}
+            child {node (e321) {Operator fails to respond to alarm (E321)}}
+            child {node (e322) {Operator fails to manually activate push button (E322)}}
+        }
+    };
+
+
+\node [or] at (g1.south) [] {};
+\node [or] at (e1.south) [] {}; % Correcting to OR gate for valve failures
+\node [or] at (e11.south) [] {};
+\node [or] at (e12.south) [] {};
+\node [or] at (e21.south) [] {};
+\node [be] at (e111.south) [] {};
+\node [be] at (e112.south) [] {};
+\node [be] at (e121.south) [] {};
+\node [be] at (e122.south) [] {};
+\node [be] at (e211.south) [] {};
+\node [be] at (e212.south) [] {};
+\node [or] at (e3.south) [] {}; % E3 reflects the broader failure in control, considering both detection and operator intervention
+\node [and] at (e31.south) [] {}; % Reflects the redundancy in sensors; both must fail
+\node [or] at (e32.south) [] {}; % Either operator failure leads to this event
+\node [be] at (e311.south) [] {};
+\node [be] at (e312.south) [] {};
+\node [be] at (e321.south) [] {};
+\node [be] at (e322.south) [] {};
+

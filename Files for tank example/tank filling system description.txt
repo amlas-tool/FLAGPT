@@ -1,0 +1,17 @@
+A tank level control system is comprised a simple circuit that controls a pump with a safety feature to prevent overfill. 
+
+Initially the system has the push button contacts open and switches 1 and 2 (SW1, SW2) contacts closed. To start the system the push button is pressed and held. This energises relay R1 which closes its contacts and maintains the circuit when the push button is released. 
+
+Relay R2 is also energised and its contacts close, starting the pump in the second circuit. 
+
+The pump transfers fluid to the tank. The level of the tank fluid is monitored by two level sensors L1 and L2. When the tank fluid reaches the required level switch SW1 opens and de-energises relay R2 turning off the pump. 
+
+When the fluid in the tank is used and the level drops SW1 will close and pump fluid to replace that used. The normal operation of the system is the switch SW1 opening and closing which turns off and on the pump. 
+
+As a safety feature, the second level sensor, L2, is connected to switch SW2. When the fluid level is unacceptably high SW2 opens which de-energises relay R1. R1 contacts then open to break the control circuit. This results in R2 de-energising, its contacts open and remove power from the pump. This will require a manual start-up of the circuit. 
+
+For the system failure mode ‘Tank overfills’, the relevant component failure modes will be revealed such as relay R2 contacts stuck closed. This component condition will mean that the pump keeps running and the problem is revealed by the tank overfilling. 
+
+Others such as relay R1 contacts fail closed will be unrevealed as this is the normal operating state for that component. 
+
+All of the component failure modes associated with the safety systems (L2, SW2, R1 and PB) will be revealed when the component is tested /inspected or when a demand for the component to work occurs. For these component failure events an inspection interval is also specified which enables the probability of the event to be calculated. 

@@ -1,0 +1,42 @@
+% Node Declarations
+\node (g1) [event] {Loss of All Braking\\ (E0)}
+    child {node (e1) {Failure of Normal Braking System\\(E1)} 
+        child {node (e11) {Failure of GREEN Hydraulic Supply \\ (E11)}}
+        child {node (e12) {Failure in Brake Pedal Mechanism \\ (E12)}}
+        child {node (e13) {Failure in Autobrake System \\ (E13)}}
+        child {node (e14) {Anti-Skid System Failure in Normal Mode \\ (E14)}}
+        child {node (e15) {Electrical/System Control Failures Affecting Normal Braking \\ (E15)}}
+    }
+    child {node (e2) {Failure of Alternate Braking System \\(E2)}
+        child {node (e21) {Failure of BLUE Hydraulic Supply \\ (E21)}}
+        child {node (e22) {Accumulator Failure \\ (E22)}}
+        child {node (e23) {Anti-Skid System Failure in Alternate Mode \\ (E23)}}
+        child {node (e24) {Automatic Switch-Over Failure \\ (E24)}}
+        child {node (e25) {Electrical/System Control Failures Affecting Alternate Braking \\ (E25)}}
+    }
+    child {node (e3) {Failure of Emergency Braking System\\ (E3)}
+        child {node (e31) {Complete Accumulator Failure\\ (E31)}}
+        child {node (e32) {System Control Failure Affecting Emergency Braking Activation\\ (E32)}}
+        child {node (e33) {Failure in Emergency Braking Mechanism\\ (E33)}}
+        child {node (e34) {Loss of Braking Computer System\\ (E34)}}
+    };
+
+% Failure Logic Gates
+\node [and]  at (g1.south)   []  {};
+\node [or]  at (e1.south)   []  {};
+\node [or]  at (e2.south)   []  {};
+\node [or]  at (e3.south)   []  {};
+\node [be]  at (e11.south)  []  {};
+\node [be]  at (e12.south)  []  {};
+\node [be]  at (e13.south)  []  {};
+\node [be]  at (e14.south)  []  {};
+\node [be]  at (e15.south)  []  {};
+\node [be]  at (e21.south)  []  {};
+\node [be]  at (e22.south)  []  {};
+\node [be]  at (e23.south)  []  {};
+\node [be]  at (e24.south)  []  {};
+\node [be]  at (e25.south)  []  {};
+\node [be]  at (e31.south)  []  {};
+\node [be]  at (e32.south)  []  {};
+\node [be]  at (e33.south)  []  {};
+\node [be]  at (e34.south)  []  {};

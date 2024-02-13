@@ -1,0 +1,51 @@
+\node (g1) [event] {No air supply to cabin\ (E0)}
+    child{node (e1) {Both ACMs fail\ (E1)}
+        child{node (e11) {Machine A fails\ (E11)}
+            child{node (e111) {Bleed air A fails\ (E111)}
+                child{node (e1111) {Engine 1 bleed fail\ (E1111)}}
+                child{node (e1112) {Engine 2 bleed fail\ (E1112)}}
+            }
+            child{node (e112) {ACM A itself fails\ (E112)}}
+        }
+        child{node (e12) {Machine B fails\ (E12)}
+            child{node (e121) {Bleed air B fails\ (E121)}
+                child{node (e1211) {Engine 1 bleed fail\ (E1211)}}
+                child{node (e1212) {Engine 2 bleed fail\ (E1212)}}
+            }
+            child{node (e122) {ACM B itself fails\ (E122)}}
+        }
+    }
+    child{node (e2) {Either Pack fails\ (E2)}
+        child {node (e21) {Pack C fails\ (E21)}
+            child{node (e211) {Mech drive C fails\ (E211)}
+                child{node (e2111) {Engine 1 mech fail\ (E2111)}}
+            }
+            child{node (e212) {Pack C itself fails\ (E212)}}
+        }
+        child {node (e22) {Pack D fails\ (E22)}
+            child{node (e221) {Mech drive D fails\ (E221)}
+                child{node (e2211) {Engine 2 mech fail\ (E2211)}}
+            }
+            child{node (e222) {Pack D itself fails\ (E222)}}
+        }
+    };
+    
+\node [and]  at (g1.south)   []  {};
+\node [and]  at (e1.south)   []  {};
+\node [or]   at (e2.south)   []  {};
+\node [or]   at (e11.south)  []  {};
+\node [or]   at (e12.south)  []  {};
+\node [or]   at (e111.south) []  {};
+\node [or]   at (e121.south) []  {};
+\node [or]   at (e21.south) []  {};
+\node [or]   at (e22.south) []  {};
+\node [be]   at (e1111.south)[]  {};
+\node [be]   at (e1112.south)[]  {};
+\node [be]   at (e1211.south)[]  {};
+\node [be]   at (e1212.south)[]  {};
+\node [be]   at (e112.south)  []  {};
+\node [be]   at (e122.south)  []  {};
+\node [be]   at (e2111.south)[]  {};
+\node [be]   at (e2211.south)[]  {};
+\node [be]   at (e212.south)  []  {};
+\node [be]   at (e222.south)  []  {};

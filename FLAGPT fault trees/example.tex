@@ -1,0 +1,43 @@
+\documentclass[bandder=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{trees,calc,shadings,shapes.gates.logic.US, shapes.geometric, positioning,arrows}
+\begin{document}
+\def\eventWidth{1cm}
+
+\def\totalwidthLevelOne{5cm} % for big trees this may need to be very large (e.g. 20cm)
+\def\totalwidthLevelTwo{3cm}
+\def\totalwidthLevelThree{1.3cm}
+\def\totalwidthLevelFour{2cm}
+\def\totalwidthLevelFive{1cm}
+
+\def\VerticalSeparationLevelOne{1.5cm}
+\def\VerticalSeparationLevelTwo{1.5cm}
+
+\begin{tikzpicture}
+ [
+% Gates and symbols style
+    undev/.style={diamond,thick,draw=cyan!80,fill=cyan!10,anchor=north,minimum width=\eventWidth-2mm},
+    and/.style={and gate US,thick,draw=red!80,fill=red!10,rotate=90,anchor=east,xshift=-1mm},
+    or/.style={or gate US,thick,draw=blue!80,fill=blue!10,rotate=90,anchor=east,xshift=-1mm},
+    be/.style={circle,thick,draw=green!80,fill=green!10,anchor=north,minimum width=0.7cm},
+% Event style
+    event/.style={rectangle,thick,draw=black!30,fill=yellow!20,text width=\eventWidth, text centered,font=\tiny\sffamily, anchor=north},
+% Children and edges style
+    edge from parent/.style={very thick,draw=black!60},
+    edge from parent path={(\tikzparentnode.south) -- ++(0,-1.05cm)-| (\tikzchildnode.north)},
+    level 1/.style={sibling distance=\totalwidthLevelOne,level distance=\VerticalSeparationLevelOne, growth parent anchor=south,nodes=event},
+    level 2/.style={sibling distance=\totalwidthLevelTwo, level distance=\VerticalSeparationLevelTwo},
+    level 3/.style={sibling distance=\totalwidthLevelThree},
+    level 4/.style={sibling distance=\totalwidthLevelFour}
+    level 5/.style={sibling distance=\totalwidthLevelFive}
+]
+%\input{parameters}
+% \input{tankoverfill}
+%\input{wb2}
+
+\input{gasleak2}
+% \input{airbleed}
+
+
+\end{tikzpicture}
+\end{document}   

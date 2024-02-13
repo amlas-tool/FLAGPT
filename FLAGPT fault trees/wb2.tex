@@ -1,0 +1,67 @@
+    \node (g1) [event] {Loss of All Braking\\ (E0)}
+        child{node (e1) {Failure of Normal Braking System\\(E1)} 
+            child {node (e11) {Hydraulic Failure in GREEN System\\ (E11)}
+                child {node (e111) {Loss of Hydraulic Fluid\\ (E111)}}
+                child {node (e112) {Hydraulic Line Leakage\\ (E112)}}
+                child {node (e113) {Hydraulic Pump Failure\\ (E113)}}
+            }
+            child {node (e12) {BSCU Failure\\ (E12)}
+                child {node (e121) {Electrical Failure in BSCU\\ (E121)}}
+                child {node (e122) {Software Error in BSCU\\ (E122)}}
+            }
+            child {node (e13) {Failure of Anti-Skid System in Normal Mode\\ (E13)}
+                child {node (e131) {Wheel Speed Sensor Failure\\ (E131)}}
+                child {node (e132) {Control Signal Failure\\ (E132)}}
+            }
+            child {node (e14) {Servo Valve Failure in Normal Mode\\ (E14)}
+                child {node (e141) {Mechanical Failure\\ (E141)}}
+                child {node (e142) {Hydraulic Blockage\\ (E142)}}
+            }
+        }
+         child{node (e2) {Failure of Alternate Braking System\\(E2)}
+            child {node (e21) {Hydraulic Failure in BLUE System\\ (E21)}
+                child {node (e211) {Loss of Hydraulic Fluid\\ (E211)}}
+                child {node (e212) {Hydraulic Line Leakage\\ (E212)}}
+                child {node (e213) {Hydraulic Pump Failure\\ (E213)}}
+            }
+            child {node (e22) {Accumulator Failure\\ (E22)}}
+            child {node (e23) {Failure of Anti-Skid System in Alternate Mode\\ (E23)}
+                child {node (e231) {Wheel Speed Sensor Failure\\ (E231)}}
+                child {node (e232) {Control Signal Failure\\ (E232)}}
+            }
+            child {node (e24) {Dual Metering Valve Failure in Alternate Mode\\ (E24)}
+                child {node (e241) {Mechanical Failure\\ (E241)}}
+                child {node (e242) {Hydraulic Blockage\\ (E242)}}
+            }
+        };
+
+    % Logic gates
+    \node [and]  at (g1.south)   []  {};
+    \node [or]   at (e1.south)   []  {};
+    \node [or]   at (e2.south)   []  {};
+    \node [or]   at (e11.south)  []  {};
+    \node [or]   at (e12.south)  []  {};
+    \node [or]   at (e13.south)  []  {};
+    \node [or]   at (e14.south)  []  {};
+    \node [or]   at (e21.south)  []  {};
+    \node [or]   at (e23.south)  []  {};
+    \node [or]   at (e24.south)  []  {};
+
+    % Basic events
+    \node [be]   at (e111.south) []  {};
+    \node [be]   at (e112.south) []  {};
+    \node [be]   at (e113.south) []  {};
+    \node [be]   at (e121.south) []  {};
+    \node [be]   at (e122.south) []  {};
+    \node [be]   at (e131.south) []  {};
+    \node [be]   at (e132.south) []  {};
+    \node [be]   at (e141.south) []  {};
+    \node [be]   at (e142.south) []  {};
+    \node [be]   at (e211.south) []  {};
+    \node [be]   at (e212.south) []  {};
+    \node [be]   at (e213.south) []  {};
+    \node [be]   at (e22.south)  []  {};
+    \node [be]   at (e231.south) []  {};
+    \node [be]   at (e232.south) []  {};
+    \node [be]   at (e241.south) []  {};
+    \node [be]   at (e242.south) []  {};

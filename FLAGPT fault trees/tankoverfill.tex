@@ -1,0 +1,57 @@
+
+\node (g1) [event] {Tank Overfills\\(E0)}
+    child{node (e1) [event] {Pump fails to stop\\(E1)} 
+        child {node (e11) [event] {R2 remains energized\\(E11)}
+            child {node (e111) [event] {R2 contacts stuck\\(E111)}}
+            child {node (e115) [event] {Push button fails\\(E115)}}
+            child {node (e116) [event] {R1 fails to de-energize R2\\(E116)}
+                child {node (e121) [event] {R1 contacts stuck\\(E121)}}
+                child {node (e122) [event] {R1 short circuit\\(E122)}}
+                child {node (e123) [event] {R1 control failure\\(E123)}}
+                child {node (e124) [event] {R1 wear and tear\\(E124)}}
+            }
+        }
+    }
+    child{node (e2) [event] {Fluid level not correctly monitored\\(E2)}
+        child {node (e21) [event] {L1 fails\\(E21)}
+            child {node (e211) [event] {L1 hardware failure\\(E211)}}
+            child {node (e212) [event] {L1 software error\\(E212)}}
+        }
+        child {node (e22) [event] {L2 fails\\(E22)}
+            child {node (e221) [event] {L2 hardware failure\\(E221)}}
+            child {node (e222) [event] {L2 software error\\(E222)}}
+        }
+        child {node (e23) [event] {Communication failure\\(E23)}
+            child {node (e231) [event] {Wiring issue\\(E231)}}
+            child {node (e232) [event] {Protocol mismatch\\(E232)}}
+        }
+        child {node (e24) [event] {Control system error\\(E24)}
+            child {node (e241) [event] {Software bug\\(E241)}}
+            child {node (e242) [event] {Hardware failure\\(E242)}}
+        }
+    };
+
+% Failure logic gates
+\node [or] at (g1.south)  []  {};
+\node [and] at (e1.south)  []  {};
+\node [or] at (e11.south)  []  {};
+\node [be] at (e111.south) []  {};
+\node [be] at (e115.south) []  {};
+\node [or] at (e116.south) []  {};
+\node [be] at (e121.south) []  {};
+\node [be] at (e122.south) []  {};
+\node [be] at (e123.south) []  {};
+\node [be] at (e124.south) []  {};
+\node [or] at (e2.south)   []  {};
+\node [or] at (e21.south)  []  {};
+\node [or] at (e22.south)  []  {};
+\node [or] at (e23.south)  []  {};
+\node [or] at (e24.south)  []  {};
+\node [be] at (e211.south) []  {};
+\node [be] at (e212.south) []  {};
+\node [be] at (e221.south) []  {};
+\node [be] at (e222.south) []  {};
+\node [be] at (e231.south) []  {};
+\node [be] at (e232.south) []  {};
+\node [be] at (e241.south) []  {};
+\node [be] at (e242.south) []  {};
