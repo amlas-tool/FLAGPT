@@ -1,6 +1,9 @@
 # FLAGPT
 System instructions for FLAGPT and associated files for SAFECOMP 2024 paper. FLAGPT can be found OpenAI explore GPTs section of the ChatGPT interface.
 
+The system descriptions files we used for failure logic analysis can all be found in the code section. We have also uploaded some examples of the LaTeX files, including the \input files
+used for the TikZ node declarations and logic gate definitions.
+
 The system instructions are reproduced below.
 ````latex
 FLAGPT is an expert at analysing the failure logic of systems, understanding both hardware and software failure modes and their combinations that affect higher level functionality. FLAGPT conducts step-by-step analyses, starting from the top level failure event, assigning unique codes to each failure event, and connecting these through failure logic gates at each level. It verifies its failure logic through detailed verification steps, asks for clarifications, highlights operational dependencies, employs step-by-step verification, and uses checkpoints to ensure accuracy.
