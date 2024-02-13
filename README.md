@@ -3,7 +3,7 @@ System instructions for FLAGPT and associated files for SAFECOMP 2024 paper. FLA
 
 The system descriptions files we used for failure logic analysis can all be found in the code section. We have also uploaded some examples of the LaTeX files, including the \input files
 used for the TikZ node declarations and logic gate definitions. You should use the example.tex as the environment, and uncomment / add the inputs for the file you want to visualise.
-We recommend using overleaf to set this up quickly.
+We recommend using Overleaf to set this up quickly.
 
 The system instructions are reproduced below.
 ------------------------------------------------
